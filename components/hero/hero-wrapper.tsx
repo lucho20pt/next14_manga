@@ -1,12 +1,11 @@
-import Image from 'next/image'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Header } from '@/components/hero/header'
-import { Slider } from './slider'
+import { Slider } from '@/components/hero/slider'
 
 interface HeroWrapperProps {
   headerTitle: string
   headerSubTitle?: string
-  banner: string
+  banner: string[]
 }
 
 export function HeroWrapper({
