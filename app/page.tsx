@@ -1,6 +1,7 @@
+import { data } from '@/app/lib/placeholder-data'
 import { Hero } from '@/components/hero'
 import { AnimeCard } from '@/components/anime'
-import { data } from '@/app/lib/placeholder-data'
+import { LodingSpinner } from '@/components/loading-spinner'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
           <AnimeCard key={el.id} anime={el} index={i} />
         ))}
       </section>
+      <LodingSpinner />
     </main>
   )
 }
