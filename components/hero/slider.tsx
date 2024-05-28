@@ -15,10 +15,11 @@ export const Slider = ({ title, source }: SliderProps) => {
     <Image
       key={i}
       alt={title}
-      width={800}
-      height={800}
       src={path}
-      objectFit="contain"
+      width="0"
+      height="0"
+      sizes="100vw"
+      className="w-auto h-auto"
     />
   ))
 
@@ -26,7 +27,7 @@ export const Slider = ({ title, source }: SliderProps) => {
     <Carousel
       opts={{ align: 'start', loop: true }}
       plugins={[plugin.current]}
-      className="h-auto md:h-96 p-0 overflow-hidden rounded-t-full md:rounded-t-none"
+      className="h-auto md:h-80 p-0 overflow-hidden rounded-t-full md:rounded-t-none"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.play}
     >
