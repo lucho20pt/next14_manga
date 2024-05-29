@@ -15,11 +15,11 @@ interface CardWrapperProps {
 
 export const CardWrapper = ({ anime, index }: CardWrapperProps) => {
   return (
-    <Card className="hover:bg-sky-500/10 shadow-lg shadow-cyan-500/20">
+    <Card className="flex flex-col justify-center items-center w-full border-0 hover:bg-sky-500/10 shadow-lg shadow-cyan-500/20">
       <CardHeader>
         <CardTitle>{anime.name}</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className='flex w-full'>
         <Image
           key={anime.id}
           alt={anime.name}
@@ -27,7 +27,7 @@ export const CardWrapper = ({ anime, index }: CardWrapperProps) => {
           width="0"
           height="0"
           sizes="100vw"
-          className="w-auto h-auto"
+          className="w-full h-auto"
         />
       </CardContent>
       <CardFooter>

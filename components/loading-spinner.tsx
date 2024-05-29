@@ -2,18 +2,20 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { AnimeCard, AnimeCardProps } from '@/components/anime'
+import { AnimeCard } from '@/components/anime'
 import { fetchAnime } from '@/app/lib/actions'
+
+export type AnimeCard = JSX.Element
 
 export const LodingSpinner = () => {
   const { ref, inView } = useInView()
-  const [data, setData] = useState<AnimeCardProps[]>([])
-  const [page, setPage] = useState(3)
+  const [data, setData] = useState<AnimeCard[]>([])
+  const [page, setPage] = useState(2)
 
   useEffect(() => {
     if (inView) {
-      fetchAnime(page).then((res) => {
-        setData((prevData) => [...prevData, ...res])
+      fetchAnime(page, 4).then((res) => {
+        setData((prevData) => [...prevData, res])
         setPage((prevPage) => prevPage + 1)
       })
     }
@@ -22,12 +24,10 @@ export const LodingSpinner = () => {
   return (
     <>
       <section className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
-        {data.map((item: AnimeCardProps, index: number) => (
-          <AnimeCard key={item.id} anime={item} index={index} />
-        ))}
+        {data}
       </section>
 
-      <aside ref={ref} className="">
+      <aside ref={ref}>
         <Image
           alt=""
           src="/assets/spinner.svg"
