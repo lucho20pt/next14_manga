@@ -6,7 +6,7 @@ import { AnimeCard, AnimeCardProps } from '@/components/anime'
 import { LodingSpinner } from '@/components/loading-spinner'
 
 export default async function Home() {
-  const data = await fetchAnime()
+  const data = await fetchAnime(1, 8, 'popularity')
 
   return (
     <main className="flex h-full flex-col items-center max-w-6xl mx-auto px-2 gap-20">

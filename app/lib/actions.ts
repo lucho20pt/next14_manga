@@ -2,9 +2,13 @@
 
 const baseApi: string = 'https://shikimori.one/api'
 
-export const fetchAnime = async () => {
+export const fetchAnime = async (
+  page: number,
+  limit: number,
+  order: string
+) => {
   const response = await fetch(
-    `${baseApi}/animes?page=${1}&limit=${8}&order=${'popularity'}`
+    `${baseApi}/animes?page=${page}&limit=${limit}&order=${order}`
   )
   const data = await response.json()
   return data

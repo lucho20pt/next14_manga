@@ -15,7 +15,7 @@ interface CardWrapperProps {
 
 export const CardWrapper = ({ anime, index }: CardWrapperProps) => {
   return (
-    <Card className="hover:bg-sky-500/10">
+    <Card className="hover:bg-sky-500/10 shadow-lg shadow-cyan-500/20">
       <CardHeader>
         <CardTitle>{anime.name}</CardTitle>
       </CardHeader>
@@ -23,7 +23,7 @@ export const CardWrapper = ({ anime, index }: CardWrapperProps) => {
         <Image
           key={anime.id}
           alt={anime.name}
-          src={anime.image.original}
+          src={`https://shikimori.one${anime.image.original}`}
           width="0"
           height="0"
           sizes="100vw"
