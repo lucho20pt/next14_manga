@@ -1,3 +1,24 @@
+## Project current: features
+- Returning shikimori api
+- Get more results on scrolling to bottom page
+- Do animations on the loading cards
+- SEO friendly copy
+- server & client comp
+
+## Project todos: features
+- add metadata
+- add single page item
+- add search
+
+## Project tech: 
+- Nextjs 14
+- Actions
+- Shadcn UI
+- React Intersection Observer
+- Framer Motion
+
+-------------
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
